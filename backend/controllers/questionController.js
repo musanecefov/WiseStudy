@@ -1,6 +1,6 @@
 import { Question } from '../models/Question.js';
 import { validationResult } from 'express-validator';
-import {ValidationStrategy as errors} from "@eslint/object-schema";
+
 
 export const addQuestion = async (req,res)=>{
     try{
