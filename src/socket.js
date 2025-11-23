@@ -1,7 +1,9 @@
 // src/socket.js
 import { io } from "socket.io-client";
 
-const SOCKET_URL = "http://localhost:3000";
+// Mühit dəyişənlərindən istifadə edin
+// Bu, Vercel-də https://wisestudy-backend.onrender.com olacaq
+const SOCKET_URL = import.meta.env.VITE_API_BASE_URL;
 
 // Get token from localStorage (or wherever you store it after login)
 const token = localStorage.getItem("accessToken");
@@ -23,6 +25,3 @@ socket.on("connect_error", (err) => {
 });
 
 export default socket;
-
-
-

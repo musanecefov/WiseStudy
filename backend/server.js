@@ -18,9 +18,12 @@ const app = express();
 
 // Basic middleware
 app.use(express.json());
+
+// CORS Configuration (Backend)
 app.use(
     cors({
-        origin: ["http://localhost:5173","http://localhost:5174"],
+        // Yalnız Render-də təyin etdiyimiz CLIENT_URL istifadə edilir
+        origin: [process.env.CLIENT_URL],
         credentials: true,
     })
 );
@@ -30,7 +33,8 @@ const server = http.createServer(app);
 // Create Socket.io BEFORE attaching req.io
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:5173","http://localhost:5174"],
+        // Socket.io üçün də CLIENT_URL istifadə edilir
+        origin: [process.env.CLIENT_URL],
         methods: ["GET", "POST"],
         credentials: true,
     },
@@ -58,5 +62,5 @@ connectDb();
 setupChatSocket(io);
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000; // Render 10000 portunu istifadə edir
 server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
