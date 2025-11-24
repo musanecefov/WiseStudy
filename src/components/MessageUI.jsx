@@ -56,7 +56,7 @@ export default function Message({ message, isOwn, onDelete, onEdit }) {
                                 <>
                                     {!imageLoaded && <div className="absolute inset-0 bg-gray-700 animate-pulse" />}
                                     <img
-                                        src={`http://localhost:3000${message.imageUrl}`}
+                                        src={`${import.meta.env.VITE_API_URL}${message.imageUrl}`}
                                         alt="sent"
                                         onLoad={() => setImageLoaded(true)}
                                         className={`w-full h-auto cursor-pointer hover:opacity-90 transition-opacity ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`}
@@ -65,9 +65,9 @@ export default function Message({ message, isOwn, onDelete, onEdit }) {
                                     />
                                 </>
                             ) : isVideoFile(message.imageUrl) ? (
-                                <video src={`http://localhost:3000${message.imageUrl}`} controls className="w-full" style={{ maxHeight: '400px' }} />
+                                <video src={`${import.meta.env.VITE_API_URL}${message.imageUrl}`} controls className="w-full" style={{ maxHeight: '400px' }} />
                             ) : (
-                                <a href={`http://localhost:3000${message.imageUrl}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 bg-gray-700/50 hover:bg-gray-700">
+                                <a href={`${import.meta.env.VITE_API_URL}${message.imageUrl}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 bg-gray-700/50 hover:bg-gray-700">
                                     Download File
                                 </a>
                             )}
@@ -121,9 +121,9 @@ export default function Message({ message, isOwn, onDelete, onEdit }) {
                     <button onClick={closeModal} className="absolute top-4 right-4 z-50 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full">X</button>
                     <div className="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center">
                         {isImage(message.imageUrl) ? (
-                            <img src={`http://localhost:3000${message.imageUrl}`} alt="Preview" className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain" />
+                            <img src={`${import.meta.env.VITE_API_URL}${message.imageUrl}`} alt="Preview" className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain" />
                         ) : (
-                            <video src={`http://localhost:3000${message.imageUrl}`} controls autoPlay className="max-h-[90vh] max-w-[90vw] rounded-lg" />
+                            <video src={`${import.meta.env.VITE_API_URL}${message.imageUrl}`} controls autoPlay className="max-h-[90vh] max-w-[90vw] rounded-lg" />
                         )}
                     </div>
                 </Modal>

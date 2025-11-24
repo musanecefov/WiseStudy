@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
     const [token, setToken] = useState(() => localStorage.getItem("accessToken") || null);
 
     const login = async (username, password) => {
-        const res = await fetch("http://localhost:3000/api/users/login", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password }),
@@ -38,7 +38,7 @@ export function AuthProvider({ children }) {
     };
 
     const fetchWithAuth = (url, options = {}) => {
-        return fetch("http://localhost:3000" + url, {
+        return fetch(`${import.meta.env.VITE_API_URL}` + url, {
             ...options,
             headers: {
                 ...(options.headers || {}),

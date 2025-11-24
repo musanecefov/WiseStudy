@@ -1,6 +1,6 @@
 // src/services/AuthService.js
 
-const API_URL = "http://localhost:3000/api/users";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/users`;
 
 export async function registerUser(username, email, password, password_confirmation) {
     const res = await fetch(`${API_URL}/register`, {

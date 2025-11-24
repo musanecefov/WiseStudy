@@ -25,7 +25,7 @@ export default function SignupForm(){
         }
 
         try {
-            const response = await fetch('http://localhost:3000/api/users/register', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
