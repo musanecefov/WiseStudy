@@ -28,6 +28,11 @@ app.use(
     })
 );
 
+app.options("*", cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+}));
+
 const server = http.createServer(app);
 
 // Create Socket.io BEFORE attaching req.io
