@@ -23,7 +23,10 @@ app.use(express.json());
 app.use(
     cors({
         // Yalnız Render-də təyin etdiyimiz CLIENT_URL istifadə edilir
-        origin: ['https://wisestudy.org'],
+        origin:  [
+        "https://wisestudy.org",
+        "https://www.wisestudy.org"
+        ],
         credentials: true,
     })
 );
@@ -36,7 +39,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         // Socket.io üçün də CLIENT_URL istifadə edilir
-        origin: ['https://wisestudy.org'],
+        origin: ['https://wisestudy.org',"https://www.wisestudy.org"],
         methods: ["GET", "POST"],
         credentials: true,
     },
