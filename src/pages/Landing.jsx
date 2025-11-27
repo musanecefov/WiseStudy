@@ -82,9 +82,9 @@ export default function Landing() {
                             { title: "Riyaziyyat", questions: "250+" },
                             { title: "İngilis dili", questions: "250+" },
                         ].map((subject, idx) => (
-                            <a
-                                key={idx}
-                                href="#"
+                            <Link
+
+                                to="/questions"
                                 className="bg-white rounded-lg shadow-md p-6 w-72 flex flex-row items-center justify-between transition-transform transform hover:-translate-y-1 hover:shadow-lg"
                             >
                                 <div>
@@ -94,7 +94,7 @@ export default function Landing() {
                                     <p className="text-slate-500">{subject.questions} sual</p>
                                 </div>
                                 <ArrowRightIcon className="h-6 w-6 text-slate-400" />
-                            </a>
+                            </Link>
                         ))}
                     </motion.section>
 
