@@ -32,7 +32,7 @@ export default function Landing() {
                                     <CheckBadgeIcon className="h-6 w-5" />
                                     Azərbaycanda #1 Imtahan Hazırlıq Platforması
                                 </h2>
-                                <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold pt-4">
+                                <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold pt-4">
                                     <span className="text-gradient">Dövlət</span> imtahanlarına hazırlaşın.
                                 </h2>
                                 <p className="text-gray-500 pt-2 font-semibold">
@@ -142,26 +142,28 @@ export default function Landing() {
                         </div>
                     </motion.section>
 
-
-                    {/* FINAL CTA */}
+                    {/*FINAL CTA*/}
                     <motion.section
-                        className="flex flex-col items-center justify-center bg-gradient2 h-62 gap-5"
+                        className="flex flex-col items-center justify-center bg-gradient2 h-62 gap-5 text-center px-4"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="font-medium text-4xl text-white">Hazırsınız?</h2>
-                        <p className="text-white text-lg">İndi qeydiyyatdan keçin və uğura doğru ilk addımı atın</p>
+                        <p className="text-white text-lg max-w-md">
+                            İndi qeydiyyatdan keçin və uğura doğru ilk addımı atın
+                        </p>
 
                         <Link
                             to="/signup"
-                            className="flex items-center text-white rounded-lg px-7 py-3 shadow-md bg-green-400 w-fit space-x-2 hover:bg-green-600 hover:-translate-y-0.5 transition duration-200 ease-in-out"
+                            className="flex items-center text-white rounded-lg px-7 py-3 shadow-md bg-green-400 w-fit space-x-2 hover:bg-green-600 hover:-translate-y-0.5 transition duration-200 ease-in-out mt-3"
                         >
                             <span className="text-xl">Qeydiyyatdan keç</span>
                             <ArrowRightIcon className="h-5 w-5" />
                         </Link>
                     </motion.section>
+
 
                 </div>
             </div>
