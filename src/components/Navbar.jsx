@@ -155,25 +155,25 @@ export default function Navbar() {
 
             {/* MOBILE MENU */}
             {isMenuOpen && (
-                <div className="md:hidden bg-white shadow-md sticky top-16 z-10 w-full">
+                <div className="md:hidden bg-white shadow-md sticky top-16 z-50 w-full">
                     {user && user.role === 'admin' && (
-                        <Link to="/admin/feedback" className="block p-4 text-indigo-600 font-bold bg-indigo-50">
+                        <Link to="/admin/feedback" className="block p-4 text-indigo-600 font-bold bg-indigo-50" onClick={()=> setIsMenuOpen(false)}>
                             🛡️ Admin Paneli
                         </Link>
                     )}
 
-                    <Link to="/" className="block p-4 text-gray-600 hover:text-sky-400">Ana Səhifə</Link>
-                    <Link to="/questions" className="block p-4 text-gray-600 hover:text-sky-400">Fənlər</Link>
-                    <Link to="/results" className="block p-4 text-gray-600 hover:text-sky-400">Nəticələr</Link>
-                    <Link to="/community" className="block p-4 text-gray-600 hover:text-sky-400">Müzakirələr</Link>
+                    <Link to="/" className="block p-4 text-gray-600 hover:text-sky-400" onClick={()=> setIsMenuOpen(false)}>Ana Səhifə</Link>
+                    <Link to="/questions" className="block p-4 text-gray-600 hover:text-sky-400" onClick={()=> setIsMenuOpen(false)}>Fənlər</Link>
+                    <Link to="/results" className="block p-4 text-gray-600 hover:text-sky-400" onClick={()=> setIsMenuOpen(false)}>Nəticələr</Link>
+                    <Link to="/community" className="block p-4 text-gray-600 hover:text-sky-400" onClick={()=> setIsMenuOpen(false)}>Müzakirələr</Link>
 
-                    <button onClick={() => setShowFeedback(true)} className="block w-full text-left p-4 text-purple-600">Rəy</button>
-                    <button onClick={() => setShowBugReport(true)} className="block w-full text-left p-4 text-red-500">Xəta Bildir</button>
+                    <button onClick={() => {setShowFeedback(true); setIsMenuOpen(false)}} className="block w-full text-left p-4 text-purple-600">Rəy</button>
+                    <button onClick={() => {setShowBugReport(true); setIsMenuOpen(false)}} className="block w-full text-left p-4 text-red-500">Xəta Bildir</button>
 
                     {user ? (
-                        <Link to="/profile" className="block p-4 text-purple-500 font-bold border-t">Profilim</Link>
+                        <Link to="/profile" className="block p-4 text-purple-500 font-bold border-t" onClick={()=> setIsMenuOpen(false)}>Profilim</Link>
                     ) : (
-                        <Link to="/login" className="block p-4 text-purple-500 border-t">Daxil ol</Link>
+                        <Link to="/login" className="block p-4 text-purple-500 border-t" onClick={()=> setIsMenuOpen(false)}>Daxil ol</Link>
                     )}
                 </div>
             )}
