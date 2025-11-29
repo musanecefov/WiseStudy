@@ -155,7 +155,7 @@ export default function Navbar() {
 
             {/* MOBILE MENU */}
             {isMenuOpen && (
-                <div className="md:hidden bg-white shadow-md sticky top-16 z-50 w-full">
+                <div className="md:hidden bg-white shadow-md fixed top-0 left-0 z-50 w-full">
                     {user && user.role === 'admin' && (
                         <Link to="/admin/feedback" className="block p-4 text-indigo-600 font-bold bg-indigo-50" onClick={()=> setIsMenuOpen(false)}>
                             🛡️ Admin Paneli
