@@ -32,7 +32,7 @@ export default function Landing() {
                                     <CheckBadgeIcon className="h-6 w-5" />
                                     Azərbaycanda #1 Imtahan Hazırlıq Platforması
                                 </h2>
-                                <h2 className="text-6xl sm:text-6xl font-semibold pt-4">
+                                <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold pt-4">
                                     <span className="text-gradient">Dövlət</span> imtahanlarına hazırlaşın.
                                 </h2>
                                 <p className="text-gray-500 pt-2 font-semibold">
@@ -71,7 +71,7 @@ export default function Landing() {
                     </motion.section>
 
                     <motion.section
-                        className="w-full flex flex-col md:flex-row justify-center gap-8 py-5 px-4"
+                        className="w-full flex flex-col items-center md:flex-row justify-center gap-8 py-5 px-4"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -100,38 +100,40 @@ export default function Landing() {
 
                     {/* WHY WISESTUDY */}
                     <motion.section
-                        className="flex flex-col items-center justify-center pt-10"
+                        className="flex flex-col items-center justify-center pt-10 text-center md:text-left"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-3xl font-bold mb-4">Niyə WiseStudy?</h2>
-                        <p className="text-lg text-gray-500 max-w-2xl text-center">
+                        <p className="text-lg text-gray-500 max-w-2xl">
                             Uğurunuz üçün lazım olan hər şey
                         </p>
                     </motion.section>
 
                     <motion.section
-                        className="w-full flex flex-col md:flex-row justify-center gap-8 py-10 px-4"
+                        className="w-full flex flex-col items-center md:flex-row md:justify-center md:gap-8 py-10 px-4"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="bg-white rounded-lg shadow-md p-6 w-82 flex flex-col items-center">
+                        <div className="bg-white rounded-lg shadow-md p-6 w-72 flex flex-col items-center mb-6 md:mb-0">
                             <BookOpenIcon className="py-5 h-20 w-20" />
                             <h2 className="mb-5 font-bold">1000+ Test Sualı</h2>
                             <p className="text-gray-500">Bütün fənlər üzrə geniş sual bankı</p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md p-6 w-82 flex flex-col items-center">
+
+                        <div className="bg-white rounded-lg shadow-md p-6 w-72 flex flex-col items-center mb-6 md:mb-0">
                             <AdjustmentsHorizontalIcon className="py-5 h-20 w-20" />
                             <h2 className="mb-5 font-bold">Hədəfə yönəlmiş plan sistemi</h2>
                             <p className="text-gray-500">
                                 Zəif tərəfləriniz gücləndirmə imkanları
                             </p>
                         </div>
-                        <div className="bg-white rounded-lg shadow-md p-6 w-82 flex flex-col items-center">
+
+                        <div className="bg-white rounded-lg shadow-md p-6 w-72 flex flex-col items-center">
                             <ArrowTrendingUpIcon className="py-5 h-20 w-20" />
                             <h2 className="mb-5 font-bold">Nəticə izləmə</h2>
                             <p className="text-gray-500">
@@ -139,6 +141,7 @@ export default function Landing() {
                             </p>
                         </div>
                     </motion.section>
+
 
                     {/* FINAL CTA */}
                     <motion.section
