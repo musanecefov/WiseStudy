@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
 
+const createSlug = (text) => {
+    if (!text) return "";
+    return text
+        .toString()
+        .replace(/İ/g,'i')
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g,'-')
+}
+
 const SubjectSection = ({ subject,title, topics }) => (
     <div className="w-full md:w-1/3 px-4 mb-8">
         <h2 className="text-2xl font-medium mb-4 text-center md:text-left">{title}</h2>
         <div className="bg-white rounded-lg shadow-xl ring-2 ring-gray-200 p-6">
             {topics.map((topic, index) => (
                 <div key={index} className="mb-4">
-                    {topic.title && <Link to={`/questions/${subject}/${topic.title.toLowerCase().replace(/\s+/g, '-')}`} className="block text-left w-full py-2 px-4 my-1 text-xl font-medium text-black  hover:bg-gray-200 rounded-md transition-colors duration-200">{topic.title}</Link>}
+                    {topic.title && <Link to={`/questions/${subject}/${createSlug(topic.title)}`} className="block text-left w-full py-2 px-4 my-1 text-xl font-medium text-black  hover:bg-gray-200 rounded-md transition-colors duration-200">{topic.title}</Link>}
                     {topic.items && (
                         <div className="pl-4">
                             {topic.items.map((item, subIndex) => (
-                                <Link to={`/questions/${subject}/${item.toLowerCase().replace(/\s+/g, '-')}`} key={subIndex} className="block text-left w-full py-2 px-4 my-1 text-black  hover:bg-gray-200 rounded-md transition-colors duration-200 text-lg">
+                                <Link to={`/questions/${subject}/${createSlug(item)}`} key={subIndex} className="block text-left w-full py-2 px-4 my-1 text-black  hover:bg-gray-200 rounded-md transition-colors duration-200 text-lg">
                                     {item}
                                 </Link>
                             ))}
