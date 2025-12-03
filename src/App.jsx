@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar.jsx';
+import ReactGA from "react-ga4";
 import Landing from './pages/Landing.jsx';
 import Footer from './components/Footer.jsx';
 import QuestionBank from './pages/QuestionBank.jsx';
@@ -6,6 +7,7 @@ import Results from './pages/Results.jsx';
 import Questions from './pages/Questions.jsx';
 import CommunityPage from './pages/CommunityPage.jsx';
 import './App.css';
+import React, { useEffect } from "react";
 import {
     AdjustmentsHorizontalIcon,
     ArrowRightIcon,
@@ -13,7 +15,7 @@ import {
     BookOpenIcon,
     CheckBadgeIcon
 } from '@heroicons/react/24/outline';
-import { Routes, Route, Link } from "react-router-dom";
+import {Routes, Route, Link, useLocation} from "react-router-dom";
 import LoginForm from "./pages/LoginForm.jsx";
 import SignupForm from "./pages/SignupForm.jsx";
 import AuthLayout from "./components/AuthLayout.jsx";
@@ -27,7 +29,18 @@ import AdminFeedback from './pages/AdminFeedback.jsx';
 // ✅ Correct import for Vercel Analytics in React (NOT Next.js)
 import { Analytics } from "@vercel/analytics/react";
 
+
+ReactGA.initialize("G-H66TFSCY1Y")
+
 function App() {
+    const location = useLocation();
+
+    useEffect(()=>{
+        ReactGA.send({
+            hitType:"pageview",
+            page:location.pathname
+        });
+    },[location]);
     return (
         <>
             <AuthProvider>
