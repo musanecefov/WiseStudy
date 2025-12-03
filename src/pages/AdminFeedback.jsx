@@ -168,7 +168,14 @@ function FeedbackCard({ fb, onResolve, onExpandImage }) {
                             {fb.type}
                         </span>
                         <span className="text-slate-400 text-sm">
-                            {new Date(fb.createdAt).toLocaleString()}
+                            {new Date(fb.createdAt).toLocaleString("az-AZ",{
+                                timeZone:"Asia/Baku",
+                                year: "numeric",
+                                month:"short",
+                                day:"numeric",
+                                hour:"2-digit",
+                                minute:"2-digit"
+                            })}
                         </span>
                         {fb.resolved && (
                             <span className="text-xs font-bold px-2 py-1 rounded bg-green-100 text-green-700 border border-green-200">
