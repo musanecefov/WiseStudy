@@ -13,7 +13,7 @@ const feedbackSchema = new Schema({
         extra:{ type: Schema.Types.Mixed},
     },
     resolved: { type: Boolean , default: false},
-    createdAt : { type: Date , default: new Date() },
+    createdAt : { type: Date , default: Date.now() },
 });
 
 
